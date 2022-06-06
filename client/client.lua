@@ -53,10 +53,10 @@ AddEventHandler('rsg_canoe:client:lauchcanoe', function()
 				SetPedIntoVehicle(player, activeboat, -1)
 				SetModelAsNoLongerNeeded(model)
 			else
-				exports['rsg_notify']:DisplayNotification("You can't take out your boat here!", 5000)
+				exports['qbr-core']:Notify(9, 'you can\'t take out your boat here!', 5000, 0, 'mp_lobby_textures', 'cross', 'COLOR_WHITE')
 			end
 		else
-			exports['rsg_notify']:DisplayNotification("You don't have this item!", 5000)
+			exports['qbr-core']:Notify(9, 'you don\'t have this item!', 5000, 0, 'mp_lobby_textures', 'cross', 'COLOR_WHITE')
 		end
 	end, { ['canoe'] = 1 })
 end)
