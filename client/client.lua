@@ -52,6 +52,8 @@ AddEventHandler('rsg_canoe:client:lauchcanoe', function()
 				SetVehicleOnGroundProperly(activeboat)
 				SetPedIntoVehicle(player, activeboat, -1)
 				SetModelAsNoLongerNeeded(model)
+				TriggerServerEvent('QBCore:Server:RemoveItem', "canoe", 1)
+				TriggerEvent("inventory:client:ItemBox", sharedItems["canoe"], "removed")
 			else
 				exports['qbr-core']:Notify(9, 'you can\'t take out your boat here!', 5000, 0, 'mp_lobby_textures', 'cross', 'COLOR_WHITE')
 			end
